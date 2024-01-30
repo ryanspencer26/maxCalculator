@@ -15,7 +15,7 @@ public class Main {
         JPanel panel2 = new JPanel(new BorderLayout());
         JPanel panel3 = new JPanel(new BorderLayout());
 
-        JLabel label0 = new JLabel("MAX CALCULATOR");
+        JLabel label0 = new JLabel("MAX CALCULATOR 2");
         JLabel label1 = new JLabel("Insert your PR:");
         JTextField tf1 = new JTextField(5);
         JLabel label2 = new JLabel("How many reps? (Must be <= 3)");
