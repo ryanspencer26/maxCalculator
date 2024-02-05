@@ -5,6 +5,10 @@ import java.awt.event.ActionListener;
 
 public class Main {
 
+    public static double pr;
+    public static double reps;
+    public static double mult;
+
     public static void main(String[] args){
 
         JFrame frame = new JFrame();
@@ -15,7 +19,7 @@ public class Main {
         JPanel panel2 = new JPanel(new BorderLayout());
         JPanel panel3 = new JPanel(new BorderLayout());
 
-        JLabel label0 = new JLabel("MAX CALCULATOR 3");
+        JLabel label0 = new JLabel("MAX CALCULATOR");
         JLabel label1 = new JLabel("Insert your PR:");
         JTextField tf1 = new JTextField(5);
         JLabel label2 = new JLabel("How many reps? (Must be <= 3)");
@@ -25,9 +29,6 @@ public class Main {
         icon.setImage(icon.getImage().getScaledInstance(520,170,Image.SCALE_DEFAULT));
         JLabel picLabel = new JLabel(icon);
 
-        final double[] pr = new double[1];
-        final double[] reps = new double[1];
-        final double[] mult = new double[1];
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -36,8 +37,8 @@ public class Main {
                 while(true){
 
                     try {
-                        pr[0] = Integer.parseInt(tf1Data);
-                        System.out.println(pr[0]);
+                        pr = Integer.parseInt(tf1Data);
+                        System.out.println(pr);
                         break;
                     } catch (Exception error) {
                         JOptionPane.showMessageDialog(null, "Insert an integer.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -50,15 +51,15 @@ public class Main {
                 while(true){
 
                     try {
-                        reps[0] = Integer.parseInt(tf2Data);
-                        System.out.println(reps[0]);
-                        if(reps[0] == 2.0){
-                            mult[0] = 1.05;
-                        } else if(reps[0] == 3.0){
-                            mult[0] = 1.1;
+                        reps = Integer.parseInt(tf2Data);
+                        System.out.println(reps);
+                        if(reps == 2.0){
+                            mult = 1.05;
+                        } else if(reps == 3.0){
+                            mult = 1.1;
                         } else {
                             System.out.println("NO MAN");
-                            mult[0] = 1.0;
+                            mult = 1.0;
                         }
                         break;
                     } catch (Exception error) {
@@ -67,7 +68,7 @@ public class Main {
 
                 }
 
-                JOptionPane.showMessageDialog(null, "Your max is " + (mult[0] * pr[0]));
+                JOptionPane.showMessageDialog(null, "Your max is " + ((int)(mult * pr)));
 
             }
         });
